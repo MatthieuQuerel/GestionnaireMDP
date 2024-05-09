@@ -1,0 +1,13 @@
+1/ crypter le fichier crypter (Master Pasword crypte/décrypte)  Fait 
+2/ authentification (USER et PASSWORD)
+3/ decrypter et recrypter le fichier decrypter 
+4/ afficher les données dans le tableau avec une boucle While
+5/Ajoue / Modification/ Suppression
+6/btn retour
+6/ dire si MDP est fort 
+
+1;test;cool;
+2;matt;biges;
+3;evan;smoff;
+
+MTt0ZXN0O2Nvb2w7DQoyO21hdHQ7YmlnZXM7DQozO2V2YW47c21vZmY7
