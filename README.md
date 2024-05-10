@@ -14,17 +14,24 @@
 Pour installer ce projet, veuillez cloner le dépôt et installer les dépendances nécessaires :
 
 ```bash
-git clone https://github.com/MatthieuQuerel/GestionnaireMDP.git
-cd GestionnaireMdp
+git clone https://github.com/MatthieuQuerel/myapp.git
+cd myapp
 pub get
 ```
+
+Ensuite, modifier les chemins d'accès au fichier BDDMDP.txt en fonction de l'emplacement de l'installation du projet, remplacez ceci :
+
+```
+C:\Users\Matthieu\myapp\BDDMDP.txt
+```
+
 
 ## Lancer le Projet
 
 Pour lancer ce projet, exécutez :
 
 ```bash
-dart run
+flutter run
 ```
 
 ## Compiler le Projet
@@ -32,7 +39,7 @@ dart run
 Pour compiler ce projet en un exécutable natif :
 
 ```bash
-dart compile exe bin/main.dart -o bin/gestionnaire_mdp
+flutter build windows
 ```
 
 ## Lancer les Tests
@@ -45,7 +52,7 @@ flutter test
 
 ## Cahier des Charges
 
-Le cahier des charges du projet est disponible [ici](https://docs.google.com/document/d/1ApCcHjifv4EpK6zQDDIZYecbO4Yh7kyMZ8yoFnFwC2A/edit).
+Le cahier des charges du projet est disponible [ici](https://docs.google.com/document/d/1ApCcHjifv4EpK6zQDDIZYecbO4Yh7kyMZ8yoFnFwC2A/edit). Contactez-nous si l'accès au fichier ne fonctionne pas.
 
 ## Ressources
 
