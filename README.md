@@ -19,12 +19,6 @@ cd myapp
 pub get
 ```
 
-Ensuite, modifier les chemins d'accès au fichier BDDMDP.txt en fonction de l'emplacement de l'installation du projet, remplacez ceci :
-
-```
-C:\Users\Matthieu\myapp\BDDMDP.txt
-```
-
 
 ## Lancer le Projet
 
