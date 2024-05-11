@@ -157,14 +157,13 @@ class _LoginPageState extends State<LoginPage> {
   // // print('Fichier crypté avec succès.');
 
   // decryptFile(key, encryptedFile, decryptedFile);
- final filePath = 'C:\\Users\\Matthieu\\myapp\\BDDMDP.txt';
-  final encodedFilePath = 'C:\\Users\\Matthieu\\myapp\\BDDMDP_encoded.txt';
-  final outputPath = 'C:\\Users\\Matthieu\\myapp\\BDDMDP_decode.txt';
+
+ final filePath = 'BDDMDP.txt';
+ 
   
   try {   
     final encodedString = File(filePath).readAsStringSync();
      decodeBase64ToFile(encodedString, filePath);
-    print('Fichier Base64 décodé avec succès et écrit dans $outputPath');
   } catch (e) {
     print('Erreur : $e');
   }

@@ -140,7 +140,7 @@ void decodeBase64ToFile(String base64String, String outputPath) {
 }
 
 void main() {
-  final filePath = 'C:\\Users\\Matthieu\\myapp\\BDDMDP.txt';
+  final filePath = 'BDDMDP.txt';
 
   try {
     // Encoder le fichier en Base64 et enregistrer dans un fichier encodé

@@ -22,7 +22,7 @@ class _MyGestionaireState extends State<MyGestionaire> {
   }
 
   Future<void> _loadData() async {
-    String encryptedFile = 'C:\\Users\\Matthieu\\myapp\\BDDMDP.txt';
+    String encryptedFile = 'BDDMDP.txt';
 
     try {
       List<String> lines = [];
@@ -73,7 +73,7 @@ class _MyGestionaireState extends State<MyGestionaire> {
               icon: Icon(Icons.exit_to_app),
               tooltip: 'Déconnexion',
               onPressed: () {
-                final filePath = 'C:\\Users\\Matthieu\\myapp\\BDDMDP.txt';
+                final filePath = 'BDDMDP.txt';
                 encodeFileToBase64(filePath, filePath);
                 print('Fichier encodé en Base64 et enregistré dans $filePath');
 

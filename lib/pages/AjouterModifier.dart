@@ -24,7 +24,7 @@ class _AjouterModifierState extends State<AjouterModifier> {
   }
 
   void _loadData() async {
-    final inputFile = File('C:\\Users\\Matthieu\\myapp\\BDDMDP.txt');
+    final inputFile = File('BDDMDP.txt');
     List<String> lines = await inputFile.readAsLines();
     String line = lines.firstWhere((line) => line.startsWith('${widget.id};'), orElse: () => '');
     if (line.isNotEmpty) {
@@ -46,7 +46,7 @@ class _AjouterModifierState extends State<AjouterModifier> {
       return; // Arrête l'exécution si les champs sont vides
     }
 
-    final outputFile = File('C:\\Users\\Matthieu\\myapp\\BDDMDP.txt');
+    final outputFile = File('BDDMDP.txt');
     List<String> lines = await outputFile.readAsLines();
     int newId = widget.id;
 

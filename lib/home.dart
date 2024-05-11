@@ -13,7 +13,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   Future<void> _encryptFile() async {
     const String password = 'MySuperSecretPassword'; // Mot de passe constant
-    final inputFile = File('C:\\Users\\Matthieu\\myapp\\BDDMDP.txt');
+    final inputFile = File('BDDMDP.txt');
 
     try {
       // Vérifier si le fichier d'entrée existe
@@ -46,7 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Future<void> _decryptFile() async {
     const String password = 'MySuperSecretPassword'; // Mot de passe constant
-    final inputFile = File('C:\\Users\\Matthieu\\myapp\\BDDMDP.txt');
+    final inputFile = File('BDDMDP.txt');
 
     try {
       // Vérifier si le fichier d'entrée existe
