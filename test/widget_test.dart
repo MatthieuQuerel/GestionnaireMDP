@@ -35,10 +35,11 @@ void decodeBase64ToFile(String base64String, String outputPath) {
 void main() {
 //metre   
 //1;test;cool;
-//2;matt;15minimum;
-//3;okey;15minimum;
+//2;matt;18minimum;
+//3;evan;18minimum;
 // dans BDDMDP.txt
-  test('Test de cryptage et décryptage', () {
+ 
+test('Test de cryptage et décryptage', () {
     final filePath = 'BDDMDP.txt';
     final encodedFilePath = 'BDDMDP_encoded.txt';
     final decodedFilePath = 'BDDMDP_decoded.txt';
@@ -62,13 +63,11 @@ void main() {
     final decodedContent = decodedFile.readAsStringSync();
     expect(decodedContent, originalContent);
   });
-
-
-  // Ajouter des tests pour le widget AjouterModifier
+  
   group('Tests pour AjouterModifier Widget', () {
     setUp(() async {
       final file = File('BDDMDP.txt');
-      await file.writeAsString('1;test;cool;\n2;matt;15minimum;\n');
+      await file.writeAsString('1;test;cool;\n2;matt;15minimum;\n3;mafffttt;12345DDhf;\n');
     });
 
     tearDown(() async {
@@ -88,29 +87,49 @@ void main() {
 
       // Simuler le clic sur le bouton de validation
       await tester.tap(find.byType(ElevatedButton));
-      await tester.pump();
+      await tester.pumpAndSettle();
 
       // Vérifier que les données sont ajoutées
       final file = File('BDDMDP.txt');
       final lines = await file.readAsLines();
-      expect(lines.contains('3;nouveau;mdp123'), isTrue);
+      print('Contenu après ajout:');
+      lines.forEach(print);
+      expect(lines.contains('3;nouveau;mdp123'), isTrue); // Attention au point-virgule à la fin
     });
 
     testWidgets('Test modification de données existantes', (WidgetTester tester) async {
+      // Réinitialiser le fichier avant le test de modification
+      final file = File('BDDMDP.txt');
+      await file.writeAsString('1;test;cool;\n2;matt;15minimum;\n');
+
       await tester.pumpWidget(MaterialApp(home: AjouterModifier(title: 'Modifier', id: 2)));
 
-      // Modifier les informations
+      // Simuler la saisie de données dans les champs
       await tester.enterText(find.byType(TextField).at(0), 'mattUpdated');
       await tester.enterText(find.byType(TextField).at(1), 'newPass');
 
       // Simuler le clic sur le bouton de validation
       await tester.tap(find.byType(ElevatedButton));
-      await tester.pump();
+      await tester.pumpAndSettle();
 
       // Vérifier les modifications
-      final file = File('BDDMDP.txt');
-      final lines = await file.readAsLines();
-      expect(lines.contains('2;mattUpdated;newPass'), isTrue);
+      final updatedFile = File('BDDMDP.txt');
+      final lines = await updatedFile.readAsLines();
+
+      // Afficher les lignes pour le débogage
+      print('Contenu après modification:');
+      lines.forEach(print);
+
+      // Vérifier que les modifications ont bien été faites
+      bool isModified = false;
+      for (var line in lines) {
+        if (line.startsWith('2;')) {
+          expect(line, '2;mattUpdated;newPass'); // Vérifiez que la ligne modifiée est correcte
+          isModified = true;
+          break;
+        }
+      }
+      expect(isModified, isTrue);
     });
   });
 }

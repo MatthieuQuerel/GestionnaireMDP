@@ -164,13 +164,15 @@ class _LoginPageState extends State<LoginPage> {
   try {   
     final encodedString = File(filePath).readAsStringSync();
      decodeBase64ToFile(encodedString, filePath);
+
+      
   } catch (e) {
     print('Erreur : $e');
   }
-  
   Navigator.of(context).pushReplacement(
     MaterialPageRoute(builder: (context) => const MyGestionaire(title: 'Gestionaire')),
-  );
+      );
+ 
 } else {
   ScaffoldMessenger.of(context).showSnackBar(
     SnackBar(
