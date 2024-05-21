@@ -28,6 +28,12 @@ Pour lancer ce projet, exécutez :
 flutter run
 ```
 
+## Identifiants de connexion à l'application
+```bash
+ID : user@example.com
+MDP : MDSLEMOTSDEPASSE
+```
+
 ## Compiler le Projet
 
 Pour compiler ce projet en un exécutable natif :
